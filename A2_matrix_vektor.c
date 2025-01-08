@@ -10,15 +10,15 @@ int vektor_a[ZEILEN];
 int vektor_b[ZEILEN];
 
 int main(void) {
-    int c[3];
+    int c[4];
     int i = 0, j = 0;
+
     srand((unsigned int)time(NULL)); /* vorgegeben */
     printf("Kontrolle:");
     for(i=0; i<4; i++){
         for(j=0; j<4; j++){
             matrix_a[i][j] = (rand() % 64) - 32; /* vorgegeben */
             printf("%4d",matrix_a[i][j]);
-
         }
     }
     for(i=0; i<4; i++) {
@@ -41,7 +41,4 @@ int main(void) {
         printf("%4d\n", c[i]);
     }
     return 0;
-
-
-
 }
