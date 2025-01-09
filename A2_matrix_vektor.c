@@ -52,11 +52,21 @@ void print_matrix_and_vectors() {
 }
 
 int main() {
+    double timeEnd, timeBegin;
+
+    timeBegin = clock();
 
     srand((unsigned int)time(NULL));
     initialize_matrix_and_vector();
     matrix_vector_multiplication();
     print_matrix_and_vectors();
 
+    timeEnd= clock();
+    printf("Clock ticks started at: %f\n", timeBegin);
+    printf("Clock ticks ended at: %f\n", timeEnd);
+    timeEnd = timeEnd - timeBegin;
+    printf("Clock ticks needed: %f\n", timeEnd);
+    timeEnd = timeEnd / CLOCKS_PER_SEC;
+    printf("Time needed in seconds: %f\n", timeEnd);
     return 0;
 }
