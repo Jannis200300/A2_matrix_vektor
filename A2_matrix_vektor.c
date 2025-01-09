@@ -8,6 +8,7 @@
 int matrix_a[200][200];
 int vektor_a[200];
 int vektor_b[200];
+long zwischenwert = 0;
 
 /* Funktion zur Initialisierung von Matrix und Vektor */
 void initialize_matrix_and_vector(int const a, int const b) {
@@ -27,6 +28,7 @@ void matrix_vector_multiplication(int const a, int const b) {
         vektor_b[i] = 0;
         for (j = 0; j < b; j++) {
             vektor_b[i] += matrix_a[i][j] * vektor_a[j];
+            zwischenwert += vektor_b[i];
         }
     }
 }
@@ -63,7 +65,9 @@ int main() {
         /*
         print_matrix_and_vectors(ZEILEN+i,SPALTEN+i);
         */
-        printf("\n Dimension %d x %d \n",i+3,i+3);
+        printf("\nDimension %d x %d \n",i+3,i+3);
+        printf("Zwischenergebniss: %d",zwischenwert);
+
         timeEnd= clock();
         printf("\nClock ticks started at: %f\n", timeBegin);
         printf("Clock ticks ended at: %f\n", timeEnd);
